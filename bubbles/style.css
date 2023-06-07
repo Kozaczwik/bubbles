@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    background: #0c192c;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index: 1;
+
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #dbd412;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #ecd74f44,
+    0 0 50px  #dbd412,
+    0 0 100px #dbd412;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(100s / var(--i));
+    z-index: 1;
+}
+.bubbles span:nth-child(even){
+    background: #e9d1d9;
+    box-shadow: 0 0 0 10px #9f7d7d2e,
+    0 0 50px  #e9d1d9,
+    0 0 100px #e9d1d9;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(75s / var(--i));
+
+}
+@keyframes animate {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(0.2)
+    }
+    
+}
+@keyframes box{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
